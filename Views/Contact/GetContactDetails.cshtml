@@ -1,0 +1,21 @@
+﻿@model ContactAppEF.Models.Contact
+
+@{
+    ViewBag.Title = "GetContactDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Contact Details of  @Html.DisplayFor(model => model.Name)</h2>
+
+<div>
+    <hr />
+    <ul>
+        @foreach (var detail in Model.Details)
+        {
+            <li>@detail.Email</li>
+        }
+    </ul>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
